@@ -1,0 +1,5 @@
+displayName = Server Dashboard
+author = Estym
+version = 0.1
+dllReferences = NHttp, Common.Logging
+side = Server
