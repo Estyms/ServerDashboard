@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,6 +14,7 @@ namespace ServerDashboard
             map.Add("mods",    sInfos.getMods   );
             map.Add("players", sInfos.getPlayers);
             map.Add("uptime",  sInfos.getUptime );
+            map.Add("world",   sInfos.getWorld);
         }
 
 
@@ -23,9 +25,10 @@ namespace ServerDashboard
             try
             {
                 function(sw);
-            } catch
+            } catch (NullReferenceException e)
             {
-                sw.WriteLine("Invalid request.");
+                SerializedError error = new SerializedError(404, "Invalid request.");
+                sw.WriteLine(JsonConvert.SerializeObject(error));
             }
  
         }

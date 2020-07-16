@@ -14,7 +14,7 @@ namespace ServerDashboard
         {
             // Creating the request Parser
             RequestParser rp = new RequestParser(sInfos);
-
+            
             // Creating Server
             httpServer = new HttpServer();
 
@@ -33,7 +33,7 @@ namespace ServerDashboard
                 
                 // Get path length
                 int length = pathList.Length;
-                rEvent.Response.Headers.Set("Content-Type", "text/html");
+                rEvent.Response.Headers.Set("Content-Type", "application/json");
                 // Writing to the Web browser
                 using (var writer = new StreamWriter(rEvent.Response.OutputStream))
                 {
@@ -61,7 +61,7 @@ namespace ServerDashboard
         {
             // Stop the server
             httpServer.Dispose();
-            httpServer.Stop();
+           
         }
     }
 }
