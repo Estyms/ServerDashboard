@@ -1,0 +1,9 @@
+{
+  "name":"Terraria Server Dashboard",
+  "tags":[
+    "C#",
+    "Json",
+    "NHTTP"
+  ],
+  "text":"Un mod terraria qui implémente une API permettant d'analyser ce qui se passe sur un serveur de jeu."
+}
